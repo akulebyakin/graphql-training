@@ -1,24 +1,25 @@
 pipeline {
     agent any
+
     stages {
         stage('checkout repo') {
             steps {
+                git branch: 'master',
                 url: 'https://github.com/akulebyakin/graphql-training'
-                git branch: 'master'
 //                 credentialsId: ''
             }
         }
-    }
 
-    stage('build') {
-        steps {
-            sh './gradlew clean assemble'
+        stage('build') {
+            steps {
+                sh './gradlew clean assemble'
+            }
         }
-    }
 
-    stage('run api tests') {
-        steps {
-            sh './gradlew test'
+        stage('run api tests') {
+            steps {
+                sh './gradlew test'
+            }
         }
     }
 
