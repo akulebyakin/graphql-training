@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('checkout repo') {
             steps {
-                gitBranch: 'master'
+                git branch: 'master'
                 credentialsId: ''
                 url: 'https://github.com/akulebyakin/graphql-training'
             }
@@ -29,7 +29,7 @@ pipeline {
                 jdk: '',
                 properties: [],
                 reportBuildPolicy: 'ALWAYS',
-                result: [[path: 'build/allure-results']]
+                results: [[path: 'build/allure-results']]
             ])
         }
     }
