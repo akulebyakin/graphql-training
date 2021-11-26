@@ -3,9 +3,9 @@ pipeline {
     stages {
         stage('checkout repo') {
             steps {
-                git branch: 'master'
-                credentialsId: ''
                 url: 'https://github.com/akulebyakin/graphql-training'
+                git branch: 'master'
+//                 credentialsId: ''
             }
         }
     }
